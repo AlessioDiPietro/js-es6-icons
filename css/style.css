@@ -20,3 +20,9 @@ header .container-fluid {
     margin-top: 11rem;
     background-color: aqua;
 }
+
+.box_icon {
+    height: 8rem;
+    background-color: burlywood;
+    border-radius: 10px;
+}
