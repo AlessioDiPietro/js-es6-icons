@@ -25,4 +25,5 @@ header .container-fluid {
     height: 8rem;
     background-color: burlywood;
     border-radius: 10px;
+    font-size : 30px;
 }
