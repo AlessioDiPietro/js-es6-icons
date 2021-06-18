@@ -115,10 +115,10 @@ const icons = [
 
 const newIcon = icons.map((element) => {
 
-    const name = element.name,
-    const prefix = element.prefix,
-    const type = element.type,
-    const family = element.family,
+    const name = element.name;
+    const prefix = element.prefix;
+    const type = element.type;
+    const family = element.family;
 
     return {
         name,
