@@ -1,3 +1,26 @@
+
+
+
+
+
+
+
+// *******function********
+function printer (array) {
+  document.getElementById("icon_group").innerHTML += "";
+
+  icons.forEach((element) => {
+    const {family,prefix,name, color} = element;
+    
+    document.getElementById("icon_group").innerHTML =
+    `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
+        <i class="${family} ${prefix}${name}"  style="color:${color}"></i>
+    </div>
+  `;
+  });
+};
+
+
 const icons = [
     {
       name: 'cat',
@@ -108,6 +131,7 @@ const icons = [
 //     </div>
 //     `;
 // });
+// printer (icons);
 
 
 const newIcon = icons.map((element) => {
@@ -168,22 +192,16 @@ newIcon.forEach((element) => {
 const selector = document.getElementById("type");
 
 selector.addEventListener("change", ()=> {
-    const valoreSelector = selector.value;
-    console.log(valoreSelector);
+  const valoreSelector = selector.value;
+  console.log(valoreSelector);
 
-    const iconFiltro = newIcon.filter ((element) =>{
-        return  element.type == valoreSelector;
-    });
-    
-    iconFiltro.forEach((element) => {
-        const {family,prefix,name,color} = element;
-        
-        document.getElementById("icon_group").innerHTML +=
-        `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
-            <i class="${family} ${prefix}${name}"  style="color:${color}"></i>
-        </div>
-        `;
-});
+  const iconFiltro = newIcon.filter ((element) =>{
+      return  element.type == valoreSelector;
+  });
+
+
+  printer(iconFiltro)
+  
 
 });
 
