@@ -99,19 +99,16 @@ const icons = [
 
 
   
-  icons.forEach((element) => {
-    const {family,prefix,name} = element;
+//   icons.forEach((element) => {
+//     const {family,prefix,name} = element;
     
-    
+//     document.getElementById("icon_group").innerHTML +=
+//     `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
+//         <i class="${family} ${prefix}${name}"></i>
+//     </div>
+//     `;
+// });
 
-        
-    document.getElementById("icon_group").innerHTML +=
-    `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
-        <i class="${family} ${prefix}${name}"></i>
-    </div>
-    `;
-
-});
 
 const newIcon = icons.map((element) => {
 
@@ -119,6 +116,15 @@ const newIcon = icons.map((element) => {
     const prefix = element.prefix;
     const type = element.type;
     const family = element.family;
+
+    let color = "green";
+
+    if (type === "user"){
+        color = "blue";
+    }else if ( type === "animal"){
+        color = "red";
+    }
+
 
     return {
         name,
@@ -131,10 +137,17 @@ const newIcon = icons.map((element) => {
 
 });
 
-console.log(newIcon)
 
 
-
+newIcon.forEach((element) => {
+    const {family,prefix,name,color} = element;
+    
+    document.getElementById("icon_group").innerHTML +=
+    `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
+        <i class="${family} ${prefix}${name}"  style="color:${color}"></i>
+    </div>
+    `;
+});
 
 
 
