@@ -1,2 +1,2 @@
 # js-es6-icons
-Esercizio "icone es 6" Di Pietro Alessio 18/0672021
+Esercizio "icone es 6" Di Pietro Alessio 18/06/2021
