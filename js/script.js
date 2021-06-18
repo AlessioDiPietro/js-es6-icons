@@ -98,10 +98,40 @@ const icons = [
   ];
 
 
+  
+  icons.forEach((element) => {
+    const {family,prefix,name} = element;
+    
+    
 
+        
+    document.getElementById("icon_group").innerHTML +=
+    `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
+        <i class="${family} ${prefix}${name}"></i>
+    </div>
+    `;
 
+});
 
+const newIcon = icons.map((element) => {
 
+    const name = element.name,
+    const prefix = element.prefix,
+    const type = element.type,
+    const family = element.family,
+
+    return {
+        name,
+        prefix,
+        type,
+        family,
+        color
+
+    }
+
+});
+
+console.log(newIcon)
 
 
 
