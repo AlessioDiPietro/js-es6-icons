@@ -150,6 +150,43 @@ newIcon.forEach((element) => {
 });
 
 
+const type = [];
+
+newIcon.forEach((element) => {
+
+    if (!type.includes(element.type)){
+        type.push(element.type);
+        document.getElementById("type").innerHTML += 
+        `<option value="${element.type}">${element.type}</option>
+        `
+    }
+    console.log(type);
+
+});
+
+
+const selector = document.getElementById("type");
+
+selector.addEventListener("change", ()=> {
+    const valoreSelector = selector.value;
+    console.log(valoreSelector);
+
+    const iconFiltro = newIcon.filter ((element) =>{
+        return  element.type == valoreSelector;
+    });
+    
+    iconFiltro.forEach((element) => {
+        const {family,prefix,name,color} = element;
+        
+        document.getElementById("icon_group").innerHTML +=
+        `<div class="col-2 m-2 box_icon border border-info d-flex align-items-center justify-content-center">
+            <i class="${family} ${prefix}${name}"  style="color:${color}"></i>
+        </div>
+        `;
+});
+
+});
+
 
 
 
